@@ -11,7 +11,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-public class LoginTestCase extends TestBase
+public class LoginTestCase_2 extends TestBase
 {
 	WebDriver driver;
 	LoginPage login;
@@ -31,10 +31,10 @@ public class LoginTestCase extends TestBase
 		Assert.assertEquals(loginPageTitle, "CRMPRO - CRM software for customer relationship management, sales, and support.");
 	}
 
-	@Then("^User enters username and password and click on login button$")
-	public void user_enters_username_and_password() throws Throwable 
+	@Then("^User enters \"([^\"]*)\" and \"([^\"]*)\" and click on login button$")
+	public void user_enters_and_and_click_on_login_button(String Username, String Password) throws Throwable 
 	{
-		login.login(property.getProperty("Username"), property.getProperty("Password"));
+		login.login(Username, Password);
 	}
 
 	@Then("^User is on home page$")
